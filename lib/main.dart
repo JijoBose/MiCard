@@ -15,10 +15,18 @@ class MyApp extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
+                radius: 50.0,
                 backgroundImage: NetworkImage(
                   'https://avatars1.githubusercontent.com/u/13100108'
                 ),
-                radius: 50.0,
+              ),
+              Text(
+                'Jijo Bose',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white,
+                  fontFamily: 'Pacifico',
+                ),
               ),
             ],
           )
