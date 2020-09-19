@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,23 +15,38 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              CircleAvatar(
-                radius: 50.0,
-                backgroundImage: NetworkImage(
+              Neumorphic(
+                style: NeumorphicStyle(
+                  shape: NeumorphicShape.concave,
+                  boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(150)),
+                  depth: 8,
+                  lightSource: LightSource.topLeft,
+                  color: Colors.grey
+                ),
+                child: CircleAvatar(
+                  radius: 50.0,
+                  backgroundImage: NetworkImage(
                   'https://avatars1.githubusercontent.com/u/13100108'),
+                ),
               ),
-              Text(
+              NeumorphicText(
                 'Jijo Bose',
-                style: TextStyle(
-                  fontSize: 30,
+                style: NeumorphicStyle(
+                  depth: 4,
                   color: Colors.white,
+                ),
+                textStyle: NeumorphicTextStyle(
+                  fontSize: 30,
                   fontFamily: 'Pacifico',
                 ),
               ),
-              Text(
+              NeumorphicText(
                 'Flutter Developer',
-                style: TextStyle(
+                style: NeumorphicStyle(
+                  depth: 4,
                   color: Colors.teal.shade100,
+                ),
+                textStyle: NeumorphicTextStyle(
                   fontSize: 20.0,
                   letterSpacing: 2.5,
                   fontWeight: FontWeight.bold,
